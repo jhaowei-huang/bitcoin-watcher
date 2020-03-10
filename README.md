@@ -33,8 +33,11 @@
 ### 專案說明
 
 後端使用 SpringBoot Framework 採取 Polling 向來源1,2,3 取得即時價格
+
 若價格有變化使用 WebSocket 通知訂閱者，也提供 API 讓使用者查詢
+
 實作簡易的聊天室，讓在線上的使用者都可以互相討論
+
 前端使用 Vue + Vuex ，圖表使用 chart.js 繪製
 
 ### 介面說明

@@ -30,11 +30,13 @@ public class HomeController {
     @Autowired
     private CryptoService cryptoService;
 
+    @CrossOrigin
     @GetMapping({"/price", "/price/"})
     public CryptoResponse price(@RequestParam Integer id, HttpServletRequest request) {
         return new CryptoResponse(request.getRequestURI(), cryptoService.getPrice(id));
     }
 
+    @CrossOrigin
     @GetMapping({"/historical/price", "/historical/price/"})
     public CryptoResponse historicalPrice(@RequestParam Integer id, @RequestParam Long start,
         @RequestParam(required = false) Long end, HttpServletRequest request) throws IOException {

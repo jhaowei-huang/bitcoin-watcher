@@ -11,10 +11,12 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Controller
 public class ChatController {
 
+    @CrossOrigin
     @MessageValidation
     @MessageMapping(value = {"/chat", "/chat/"})
     @SendTo("/topic/chat")

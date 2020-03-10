@@ -2,6 +2,7 @@
 
 ![img](https://i.imgur.com/W5cuIBC.png)
 
+
 ### 安裝與使用
 
 - 透過 Docker Image 
@@ -29,6 +30,13 @@
 >
 > - `mvn spring-boot:run`
 
+### 專案說明
+
+後端使用 SpringBoot Framework 採取 Polling 向來源1,2,3 取得即時價格
+若價格有變化使用 WebSocket 通知訂閱者，也提供 API 讓使用者查詢
+實作簡易的聊天室，讓在線上的使用者都可以互相討論
+前端使用 Vue + Vuex ，圖表使用 chart.js 繪製
+
 ### 介面說明
 
 ![img](https://i.imgur.com/j6cIs9J.png)
@@ -45,7 +53,7 @@
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 綠框: 即時模式/歷史模式的圖表
 
-## API 說明
+### API 說明
 
 __GET /api/price?id=?__ ： 查看當前價格 
 
@@ -60,3 +68,12 @@ __GET /api/historical/price__ ： 查看歷史價格
 |id| true | 1, 2, 3|
 |start| true | UNIX timestamp |
 |end| false | UNIX timestamp, 預設是現在時間|
+
+### TODO
+1. 來源1目前無法查詢歷史價格
+
+2. 歷史價格的scale除了天，增加其他時間範圍(周, 月, 季, 年)
+
+3. 顯示目前有多少人在線上
+
+4. 提供更改名字頭像功能，若名字重複使用`#編號`區分
